@@ -1,7 +1,4 @@
 const myLibrary = []
-const button = document.querySelector('button')
-
-button.addEventListener('click', addBookToLibrary)
 
 class Book {
     constructor(title, author, pages, read) {
