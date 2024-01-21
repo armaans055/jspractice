@@ -1,4 +1,7 @@
-console.log("script test")
+const myLibrary = []
+const button = document.querySelector('button')
+
+button.addEventListener('click', addBookToLibrary)
 
 class Book {
     constructor(title, author, pages, read) {
@@ -6,10 +9,16 @@ class Book {
         this.author = author;
         this.pages = pages;
         this.read = read;
-        this.info = function () {
-            return `Hello, the book is ${this.title}, the author is ${this.author} it has ${this.pages} pages, and I ${this.read} read it`
-        };
+
     }
 }
 
-const harryPotter = new Book('Harry Potter', 'JK Rolling', '98', 'have')
+function addBookToLibrary(){
+        let userTitle = prompt('title?')
+        let userAuthor = prompt('author?')
+        let userPages = prompt('pages?')
+        let userRead = prompt('read?')
+        myLibrary.push(new Book(userTitle, userAuthor, userPages, userRead))
+}
+
+
