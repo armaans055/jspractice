@@ -8,7 +8,6 @@ class Book {
         this.author = author;
         this.pages = pages;
         this.read = read;
-
     }
 }
 
@@ -23,12 +22,13 @@ form.addEventListener('submit', (e)=>{
     const newBook = document.createElement("div")
     newBook.className = "bookdetails"
     newContent = document.createTextNode(currentBook.title )
+    currentTitle = currentBook.title
     newBook.appendChild(newContent)
     newBook.innerHTML += "<br></br>"
     newContent = document.createTextNode(currentBook.author)
     newBook.appendChild(newContent)
     newBook.innerHTML += "<br></br>"
-    newContent = document.createTextNode(currentBook.pages)
+    newContent = document.createTextNode(currentBook.pages + " pages")
     newBook.appendChild(newContent)
     newBook.innerHTML += "<br></br>"
     if(currentBook.read === "read"){
@@ -36,6 +36,7 @@ form.addEventListener('submit', (e)=>{
     }else{
         newContent = document.createTextNode("Unread")
     }
+    currentStatus = currentBook.read;
     newBook.appendChild(newContent)
     newBook.setAttribute("style","width: 5%")
     newBook.setAttribute("style","height: 5px")
@@ -43,11 +44,15 @@ form.addEventListener('submit', (e)=>{
     rightSide.appendChild(newBook)
     const deleteButton = document.createElement("button")
     const readButton = document.createElement("button")
+    readButton.className = "checkboxx"
     deleteButton.className = "deleteButton"
     newBook.appendChild(deleteButton)
     newBook.appendChild(readButton)
     deleteButton.addEventListener('click', ()=>{
         rightSide.removeChild(newBook)
+    })
+    readButton.addEventListener('click', ()=>{
+        
     })
 })
 

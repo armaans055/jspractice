@@ -87,9 +87,9 @@ input:hover,
     align-items: center;
     background-color: brown;
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 3px;
-    
+    padding: 0px;
 }
 
 .deleteButton{
@@ -97,8 +97,15 @@ input:hover,
     height: 30px;
     width: 30px;
     position: relative;
-    top: -120px;
-    left: 20px;
+    top: -100px;
     border: 3px solid black;
 }
+
+.checkboxx{
+    height: 30px;
+    width: 30px;
+    position: relative;
+    top: 100px;
+}
+
 
