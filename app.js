@@ -12,13 +12,7 @@ class Book {
     }
 }
 
-// function addBookToLibrary(){
-//         let userTitle = prompt('title?')
-//         let userAuthor = prompt('author?')
-//         let userPages = prompt('pages?')
-//         let userRead = prompt('read?')
-//         myLibrary.push(new Book(userTitle, userAuthor, userPages, userRead))
-// }
+
 
 form.addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -47,6 +41,14 @@ form.addEventListener('submit', (e)=>{
     newBook.setAttribute("style","height: 5px")
     newBook.setAttribute("style","border: 5px solid black")
     rightSide.appendChild(newBook)
+    const deleteButton = document.createElement("button")
+    const readButton = document.createElement("button")
+    deleteButton.className = "deleteButton"
+    newBook.appendChild(deleteButton)
+    newBook.appendChild(readButton)
+    deleteButton.addEventListener('click', ()=>{
+        rightSide.removeChild(newBook)
+    })
 })
 
 
